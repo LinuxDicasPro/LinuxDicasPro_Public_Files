@@ -1,3 +1,4 @@
+[Dicas]::
 # Como Corrigir Fontes Feias em Aplicativos Java no Linux
 
 Aplicações Java que utilizam Swing ou AWT podem apresentar **fontes serrilhadas**
@@ -91,3 +92,9 @@ Com esses ajustes simples, é possível corrigir o problema de fontes feias em
 aplicativos Java no Linux. A solução global é prática se você utiliza muitos
 programas Java, enquanto a solução individual é ideal para testar ou aplicar
 em apenas um software específico.
+
+### Fontes
+
+* https://wiki.archlinux.org/title/Java_Runtime_Environment_fonts
+* https://batsov.com/articles/2010/02/26/enable-aa-in-swing/
+* https://askubuntu.com/questions/636666/ugly-non-anti-aliased-fonts-in-java-swing-applications
