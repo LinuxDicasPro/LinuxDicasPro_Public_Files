@@ -3,7 +3,7 @@
 Aplicações Java que utilizam Swing ou AWT podem apresentar **fontes serrilhadas**
 ou com baixa qualidade no Linux.
 
-![](forstwire1.png)
+![](https://raw.githubusercontent.com/LinuxDicasPro/LinuxDicasPro_Public_Files/refs/heads/master/Artigos/java_font_fix/frostwire1.png)
 
 Isso acontece porque, por padrão, a máquina virtual Java (JVM) não aplica
 suavização de fontes (antialiasing) da mesma forma que o sistema gráfico do Linux.
@@ -58,7 +58,7 @@ export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true'
 
 Ao reiniciar a sessão, o problema estará resolvido.
 
-![](frostwire2.png)
+![](https://raw.githubusercontent.com/LinuxDicasPro/LinuxDicasPro_Public_Files/refs/heads/master/Artigos/java_font_fix/frostwire2.png)
 
 ## 2. Solução individual (apenas para um programa)
 
