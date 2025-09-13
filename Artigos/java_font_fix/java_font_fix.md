@@ -1,21 +1,37 @@
 [Dicas]::
 # Como Corrigir Fontes Feias em Aplicativos Java no Linux
 
-Aplicações Java que utilizam Swing ou AWT podem apresentar **fontes serrilhadas**
-ou com baixa qualidade no Linux.
+Se você já precisou utilizar aplicativos Java, provavelmente já percebeu que,
+em muitos casos, as fontes não aparecem como deveriam. Em muitos desses softwares
+e até mesmo pequenos aplicativos Java independentes, o problema é o mesmo:
+letras que parecem **"pixeladas"**, desajustadas ou simplesmente feias.
+Isso não só prejudica a leitura, mas também pode causar desconforto visual,
+principalmente durante longas horas de programação ou uso intenso do software.
 
 ![](https://raw.githubusercontent.com/LinuxDicasPro/LinuxDicasPro_Public_Files/refs/heads/master/Artigos/java_font_fix/frostwire1.png)
 
-Isso acontece porque, por padrão, a máquina virtual Java (JVM) não aplica
-suavização de fontes (antialiasing) da mesma forma que o sistema gráfico do Linux.
+A raiz do problema está no sistema de renderização de fontes do Java,
+que historicamente não se integra muito bem aos sistemas Linux modernos.
+Diferente do Windows, onde a JVM (Java Virtual Machine) consegue aproveitar melhor
+a renderização do sistema, no Linux o mesmo frequentemente pode recorrer a métodos
+internos que não respeitam suavização, anti-aliasing ou as configurações de DPI do
+seu ambiente de desktop. O resultado? Fontes borradas, espaçamento irregular e uma
+aparência geral que passa sensação de “datado” ou pouco polido.
 
-A solução consiste em habilitar manualmente o antialiasing e outras propriedades
-de renderização de texto, tanto de forma **global** (para todas as aplicações Java)
-quanto de forma **individual** (apenas para um programa específico).
+Além disso, esse problema pode variar dependendo da distribuição, do ambiente gráfico
+(GNOME, KDE, XFCE, etc.) e até do tipo de instalação da JVM. Para complicar,
+alguns aplicativos Java ignoram completamente as configurações do sistema, 
+aplicando suas próprias renderizações internas, o que faz com que ajustes globais
+de fontes e suavização não tenham efeito.
 
-Essa opção você vai usar quando:
+Neste guia, vamos explorar como melhorar drasticamente a aparência das fontes em
+aplicativos Java no Linux. A solução consiste em habilitar manualmente o
+antialiasing e outras propriedades de renderização de texto, tanto de forma
+**global** (para todas as aplicações Java) quanto de forma **individual**
+(apenas para um programa específico).
+
+Essas configurações você vai usar quando:
 - O sistema não tem um daemon xsettings e você não quer instalar um;
-
 - Você não tem acesso ao código-fonte do programa em Java. 
 
 ## 1. Solução global (para todas as aplicações Java)
@@ -39,25 +55,28 @@ Onde \<OPTIONS\> é um dos valores:
 | `lcd`, `lcd_hrgb`                  | Antialiasing otimizado para muitos monitores LCD       |
 | `lcd_hbgr`, `lcd_vrgb`, `lcd_vbgr` | Alternativas para monitores LCD com diferentes padrões |
 
-As configurações gasp e lcd são os mais recomendados.
+As configurações **gasp** e **lcd** são os mais recomendados, mas **on** é o mais
+abrangente.
 
 Outra opção inclui ativar explicitamente o antialiasing para componentes Swing:
 ```bash
 _JAVA_OPTIONS="-Dswing.aatext=true"
 ```
 
-Opcionalmente, é possível usar a aparência do GTK adicionando o seguinte:
+Opcionalmente, é possível também usar a aparência do GTK adicionando o seguinte:
 ```bash
 _JAVA_OPTIONS='-Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
 ```
 
-Para configurar todas as opções de antialiasing, é só adicionar a seguinte linha:
+E por fim, para configurar todas as opções de antialiasing, é só adicionar a
+seguinte linha em algum arquivo de configurações de variáveis de sua preferência
+(como os citados acima, `~/.profile`, `~/.bashrc`, `~/.zshrc`, `/etc/profile`, etc):
 
 ```bash
 export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true'
 ```
 
-Ao reiniciar a sessão, o problema estará resolvido.
+Ao reiniciar a sessão ou até mesmo o sistema, o problema estará resolvido.
 
 ![](https://raw.githubusercontent.com/LinuxDicasPro/LinuxDicasPro_Public_Files/refs/heads/master/Artigos/java_font_fix/frostwire2.png)
 
