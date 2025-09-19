@@ -45,61 +45,61 @@ ALPack <parâmetro> [opções] [--] [ARGS...]
 
 ## 📌 Parâmetros Disponíveis
 
-- **setup** → Inicializa ou configura o ambiente rootfs  
-- **run** → Executa comandos dentro do rootfs  
-- **config** → Exibe ou modifica a configuração global  
-- **aports** → Gerencia repositórios locais do *aports*  
-- **builder** → Utilitário para construir pacotes e imagens  
-- **apk** → Executa o gerenciador de pacotes `apk`  
-- **add | install <ARGS>** → Instala pacotes no rootfs  
-- **del | remove <ARGS>** → Remove pacotes do rootfs  
-- **-s, search <ARGS>** → Busca pacotes disponíveis  
-- **-u, update** → Atualiza índices e pacotes instalados  
-- **fix** → Tenta corrigir pacotes quebrados  
+- **setup** ➔ Inicializa ou configura o ambiente rootfs  
+- **run** ➔ Executa comandos dentro do rootfs  
+- **config** ➔ Exibe ou modifica a configuração global  
+- **aports** ➔ Gerencia repositórios locais do *aports*  
+- **builder** ➔ Utilitário para construir pacotes e imagens  
+- **apk** ➔ Executa o gerenciador de pacotes `apk`  
+- **add | install <ARGS>** ➔ Instala pacotes no rootfs  
+- **del | remove <ARGS>** ➔ Remove pacotes do rootfs  
+- **-s, search <ARGS>** ➔ Busca pacotes disponíveis  
+- **-u, update** ➔ Atualiza índices e pacotes instalados  
+- **fix** ➔ Tenta corrigir pacotes quebrados  
 
 ## ⚙️ Opções por parâmetro
 
-### 🔹 Setup
-- `--no-cache` → Desabilita cache  
-- `-r, --reinstall` → Reinstala pacotes  
-- `--edge` → Usa o repositório *edge*  
-- `--minimal` → Instala apenas pacotes mínimos  
-- `--mirror=<URL>` → Define mirror Alpine  
-- `--cache=<DIR>` → Define diretório de cache  
-- `-R, --rootfs=<DIR>` → Define diretório rootfs  
+### 📌 Setup
+- `--no-cache` ➔ Desabilita cache  
+- `-r, --reinstall` ➔ Reinstala pacotes  
+- `--edge` ➔ Usa o repositório *edge*  
+- `--minimal` ➔ Instala apenas pacotes mínimos  
+- `--mirror=<URL>` ➔ Define mirror Alpine  
+- `--cache=<DIR>` ➔ Define diretório de cache  
+- `-R, --rootfs=<DIR>` ➔ Define diretório rootfs  
 
-### 🔹 Run
-- `-0, --root` → Executa com privilégios de root  
-- `-i, --ignore-extra-binds` → Ignora binds adicionais  
-- `-b, --bind-args <ARGS>` → Montagens extras  
-- `-c, --command <CMD>` → Comando(s) a executar  
-- `-R, --rootfs=<DIR>` → Define diretório rootfs  
+### 📌 Run
+- `-0, --root` ➔ Executa com privilégios de root  
+- `-i, --ignore-extra-binds` ➔ Ignora binds adicionais  
+- `-b, --bind-args <ARGS>` ➔ Montagens extras  
+- `-c, --command <CMD>` ➔ Comando(s) a executar  
+- `-R, --rootfs=<DIR>` ➔ Define diretório rootfs  
 
-### 🔹 Config
-- `--use-proot` → Usa **proot** (padrão)  
-- `--use-bwrap` → Usa **bubblewrap**  
-- `--use-latest-stable` → Usa release *latest-stable* (padrão)  
-- `--use-edge` → Usa release *edge*  
-- `--cache-dir=<DIR>` → Define diretório de cache  
-- `--output-dir=<DIR>` → Define diretório de saída  
-- `--rootfs-dir=<DIR>` → Define diretório rootfs  
-- `--default-mirror=<URL>` → Define mirror padrão  
+### 📌 Config
+- `--use-proot` ➔ Usa **proot** (padrão)  
+- `--use-bwrap` ➔ Usa **bubblewrap**  
+- `--use-latest-stable` ➔ Usa release *latest-stable* (padrão)  
+- `--use-edge` ➔ Usa release *edge*  
+- `--cache-dir=<DIR>` ➔ Define diretório de cache  
+- `--output-dir=<DIR>` ➔ Define diretório de saída  
+- `--rootfs-dir=<DIR>` ➔ Define diretório rootfs  
+- `--default-mirror=<URL>` ➔ Define mirror padrão  
 
-### 🔹 Aports
-- `-u, --update` → Atualiza repositório local  
-- `-s, --search=<PKG>` → Busca pacote no aports  
-- `-g, --get=<PKG>` → Baixa APKBUILD  
-- `-R, --rootfs=<DIR>` → Define diretório rootfs  
+### 📌 Aports
+- `-u, --update` ➔ Atualiza repositório local  
+- `-s, --search=<PKG>` ➔ Busca pacote no aports  
+- `-g, --get=<PKG>` ➔ Baixa APKBUILD  
+- `-R, --rootfs=<DIR>` ➔ Define diretório rootfs  
 
-### 🔹 Builder
-- `-a, --apkbuild=<APKBUILD>` → Usa APKBUILD específico  
-- `-R, --rootfs=<DIR>` → Define diretório rootfs  
+### 📌 Builder
+- `-a, --apkbuild=<APKBUILD>` ➔ Usa APKBUILD específico  
+- `-R, --rootfs=<DIR>` ➔ Define diretório rootfs  
 
 ## 🌍 Variáveis de Ambiente
 
-- `ALPACK_ARCH` → Arquitetura alvo (`x86_64`, `aarch64`, etc.)  
-- `ALPACK_ROOTFS` → Caminho para o rootfs usado pelo ALPack  
-- `ALPACK_CACHE` → Caminho para o cache usado pelo ALPack  
+- `ALPACK_ARCH` ➔ Arquitetura alvo (`x86_64`, `aarch64`, etc.)  
+- `ALPACK_ROOTFS` ➔ Caminho para o rootfs usado pelo ALPack  
+- `ALPACK_CACHE` ➔ Caminho para o cache usado pelo ALPack  
 
 ## Por que usar ALPack para Compilar Binários Estáticos?
 
@@ -129,7 +129,7 @@ $ ALPack setup --edge
 
 ```bash
 $ ALPack run -- cat /etc/os-release
- $ ALPack run -c "cat /etc/os-release"
+$ ALPack run -c "cat /etc/os-release"
 ```
 
 ### 3) Exemplo de como Montar/Fornecer o Código-Fonte ao Rootfs
@@ -148,19 +148,19 @@ Para C/C++ (exemplo usando `gcc`):
 
 ```bash
 # dentro do rootfs
- export CFLAGS="-O2 -pipe -static -s"
- export LDFLAGS="-static"
- make
- # ou
- gcc $CFLAGS -o meuapp src/main.c $LDFLAGS
+export CFLAGS="-O2 -pipe -static -s"
+export LDFLAGS="-static"
+make
+# ou
+gcc $CFLAGS -o meuapp src/main.c $LDFLAGS
 ```
 
 Após a compilação, verifique se o binário é realmente estático:
 
 ```bash
 $ ldd meuapp || true  # se responder "not a dynamic executable" é estático
- # ou
- $ readelf -d meuapp | grep NEEDED || true
+# ou
+$ readelf -d meuapp | grep NEEDED || true
 ```
 
 Remova símbolos desnecessários: 
