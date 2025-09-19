@@ -13,11 +13,18 @@ padrão ele vai gerar um rootfs completo pronto para trabalhar com builds e
 desenvolvimento de pacotes. Porém, há parâmetros que podem ser usados para
 configuração de um ambiente mínimo.
 
+ALPack é uma ferramenta pensada para simplicidade e eficiência: um binário que
+**não exige dependências** para ser distribuído e que
+**oferece um ambiente Alpine isolado** ideal para compilar binários estáticos,
+testar APKBUILDs e criar pacotes reprodutíveis. A combinação de rootfs leve,
+suporte a `proot`/`bwrap` e utilitários integrados torna o ALPack uma opção
+prática para desenvolvedores e pipelines de CI.
+
 ## Objetivo
 
 - Ser simples, prático e autossuficiente;
 - Pode ser usado como ambiente Alpine em sandbox;
-- Feito para trabalhar e testar **APKBUILDs** mesmo fora do Alpine Linux;
+- Feito para testar e trabalhar com **APKBUILDs** mesmo fora do Alpine Linux;
 - Especialmente criado para **compilação de binários estáticos**.
 
 ## Principais Funcionalidades
@@ -33,7 +40,7 @@ configuração de um ambiente mínimo.
 ## 🚀 Uso
 
 ```bash
-alpack <parâmetro> [opções] [--] [ARGS...]
+ALPack <parâmetro> [opções] [--] [ARGS...]
 ```
 
 ## 📌 Parâmetros Disponíveis
@@ -122,7 +129,7 @@ $ ALPack setup --edge
 
 ```bash
 $ ALPack run -- cat /etc/os-release
-$ ALPack run -c "cat /etc/os-release"
+ $ ALPack run -c "cat /etc/os-release"
 ```
 
 ### 3) Exemplo de como Montar/Fornecer o Código-Fonte ao Rootfs
@@ -141,27 +148,27 @@ Para C/C++ (exemplo usando `gcc`):
 
 ```bash
 # dentro do rootfs
-export CFLAGS="-O2 -pipe -static -s"
-export LDFLAGS="-static"
-make
-# ou
-gcc $CFLAGS -o meuapp src/main.c $LDFLAGS
+ export CFLAGS="-O2 -pipe -static -s"
+ export LDFLAGS="-static"
+ make
+ # ou
+ gcc $CFLAGS -o meuapp src/main.c $LDFLAGS
 ```
 
 Após a compilação, verifique se o binário é realmente estático:
 
 ```bash
-ldd meuapp || true  # se responder "not a dynamic executable" é estático
-# ou
-readelf -d meuapp | grep NEEDED || true
+$ ldd meuapp || true  # se responder "not a dynamic executable" é estático
+ # ou
+ $ readelf -d meuapp | grep NEEDED || true
 ```
 
 Remova símbolos desnecessários: 
 ```bash
-strip --strip-all meuapp
+$ strip --strip-all meuapp
 ```
 
-## Notas sobre `proot` vs `bwrap`
+## Notas sobre **proot** vs **bubblewrap** (bwrap)
 
 - **proot**: implementa chroot/sandbox através de emulação de chamadas de sistema
 no espaço do usuário. Funciona em praticamente qualquer distribuição e não exige
@@ -171,12 +178,3 @@ pode ser mais eficiente e mais seguro, porém requer suporte do kernel e permiss
 adequadas.
 
 ALPack permite escolher entre os dois via `config` (`--use-proot` ou `--use-bwrap`).
-
-## Conclusão
-
-ALPack é uma ferramenta pensada para simplicidade e eficiência: um binário que
-**não exige dependências** para ser distribuído e que
-**oferece um ambiente Alpine isolado** ideal para compilar binários estáticos,
-testar APKBUILDs e criar pacotes reprodutíveis. A combinação de rootfs leve,
-suporte a `proot`/`bwrap` e utilitários integrados torna o ALPack uma opção
-prática para desenvolvedores e pipelines de CI.
