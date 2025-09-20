@@ -20,6 +20,8 @@ testar APKBUILDs e criar pacotes reprodutíveis. A combinação de rootfs leve,
 suporte a `proot`/`bwrap` e utilitários integrados torna o ALPack uma opção
 prática para desenvolvedores e pipelines de CI.
 
+![](https://raw.githubusercontent.com/LinuxDicasPro/LinuxDicasPro_Public_Files/refs/heads/master/Projetos/alpack/alpack-run.gif)
+
 ## Objetivo
 
 - Ser simples, prático e autossuficiente;
@@ -114,6 +116,14 @@ ALPack facilita esse processo porque:
   da própria ferramenta para qualquer ambiente sem instalar várias dependências.
 - Suporta workflows com `APKBUILD`/`abuild` ou builds manuais, permitindo empacotar
   o resultado como APK ou tarball.
+
+## Preview
+
+![](https://raw.githubusercontent.com/LinuxDicasPro/LinuxDicasPro_Public_Files/refs/heads/master/Projetos/alpack/alpack-setup.gif)
+
+![](https://raw.githubusercontent.com/LinuxDicasPro/LinuxDicasPro_Public_Files/refs/heads/master/Projetos/alpack/alpack-aports.gif)
+
+![](https://raw.githubusercontent.com/LinuxDicasPro/LinuxDicasPro_Public_Files/refs/heads/master/Projetos/alpack/alpack-config.gif)
 
 ## Exemplos Básicos
 
