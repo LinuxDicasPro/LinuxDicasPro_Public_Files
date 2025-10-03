@@ -1,0 +1,4 @@
+#!/bin/bash
+
+cd ./DataBase
+python3 -B main.py
