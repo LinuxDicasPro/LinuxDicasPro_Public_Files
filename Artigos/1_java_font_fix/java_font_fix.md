@@ -8,7 +8,7 @@ letras que parecem **"pixeladas"**, desajustadas ou simplesmente feias.
 Isso não só prejudica a leitura, mas também pode causar desconforto visual,
 principalmente durante longas horas de programação ou uso intenso do software.
 
-![](https://raw.githubusercontent.com/LinuxDicasPro/LinuxDicasPro_Public_Files/refs/heads/master/Artigos/java_font_fix/frostwire1.png)
+![](https://raw.githubusercontent.com/LinuxDicasPro/LinuxDicasPro_Public_Files/refs/heads/master/Artigos/1_java_font_fix/frostwire1.png)
 
 A raiz do problema está no sistema de renderização de fontes do Java,
 que historicamente não se integra muito bem aos sistemas Linux modernos.
@@ -78,7 +78,7 @@ export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true'
 
 Ao reiniciar a sessão ou até mesmo o sistema, o problema estará resolvido.
 
-![](https://raw.githubusercontent.com/LinuxDicasPro/LinuxDicasPro_Public_Files/refs/heads/master/Artigos/java_font_fix/frostwire2.png)
+![](https://raw.githubusercontent.com/LinuxDicasPro/LinuxDicasPro_Public_Files/refs/heads/master/Artigos/1_java_font_fix/frostwire2.png)
 
 ## 2. Solução individual (apenas para um programa)
 

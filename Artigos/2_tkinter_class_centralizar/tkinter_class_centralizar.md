@@ -10,7 +10,7 @@ essa lógica em uma **classe**, tornando o código mais organizado e reutilizáv
 
 As janelas em Tkinter não centralizam por padrão.
 
-![](1.webp)
+![](https://raw.githubusercontent.com/LinuxDicasPro/LinuxDicasPro_Public_Files/refs/heads/master/Artigos/2_tkinter_class_centralizar/1.webp)
 
 A ideia é criar uma classe que herde de `tk.Tk`, e dentro dela implementar um
 método responsável por calcular a posição da janela com base no tamanho da tela
@@ -52,7 +52,7 @@ if __name__ == "__main__":
     app.mainloop()
 ```
 
-![](2.webp)
+![](https://raw.githubusercontent.com/LinuxDicasPro/LinuxDicasPro_Public_Files/refs/heads/master/Artigos/2_tkinter_class_centralizar/2.webp)
 
 ## Como Funciona
 

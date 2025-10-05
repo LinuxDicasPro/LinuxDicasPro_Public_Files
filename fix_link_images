@@ -1,0 +1,64 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+BASE_URL="https://raw.githubusercontent.com/LinuxDicasPro/LinuxDicasPro_Public_Files/refs/heads/master"
+BASE_DIR="Artigos"
+DRY_RUN=false
+
+usage() {
+  echo "Uso: $0 [--dry-run]"
+  echo "  --dry-run  Mostra as alterações sem modificar os arquivos"
+  exit 1
+}
+
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+    --dry-run) DRY_RUN=true; shift ;;
+    -h|--help) usage ;;
+    *) echo "Opção desconhecida: $1"; usage ;;
+  esac
+done
+
+find "$BASE_DIR" -type f -name "*.md" -print0 |
+while IFS= read -r -d '' mdfile; do
+  echo "Processando: $mdfile"
+  dirpath=$(dirname "$mdfile")
+  relative_path="${dirpath#"$BASE_DIR/"}"
+  correct_prefix="$BASE_URL/$BASE_DIR/$relative_path"
+
+  export CP="$correct_prefix"
+  tmp=$(mktemp)
+
+  perl -0777 -pe '
+    my $cp = $ENV{CP};
+    s{!\[([^\]]*)\]\(\s*([^\s\)]+)\s*\)}{
+      my ($alt,$url)=($1,$2);
+
+      if ($url !~ m{^https?://}) {
+        $url =~ s{^\./}{};
+        $url = "$cp/$url";
+      }
+      elsif ($url =~ m{https?://.*https?://}) {
+        if ($url =~ m{.*/Artigos/[^/]+/([^/]+)$}) {
+          my $file = $1;
+          $url = "$cp/$file";
+        }
+      }
+      elsif ($url =~ m{/Artigos/[^/]+/([^/]+)$} && index($url, $cp) == -1) {
+        my $file = $1;
+        $url = "$cp/$file";
+      }
+      "!\[$alt\]\($url\)";
+    }eg;
+  ' "$mdfile" > "$tmp"
+
+  if $DRY_RUN; then
+    echo "---- diff $mdfile ----"
+    diff --color=auto -u "$mdfile" "$tmp" || true
+    rm "$tmp"
+  else
+    mv "$tmp" "$mdfile"
+  fi
+done
+
+echo "Concluído!"
