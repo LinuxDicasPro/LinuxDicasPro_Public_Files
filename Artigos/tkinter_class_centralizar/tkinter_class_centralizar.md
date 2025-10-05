@@ -1,5 +1,5 @@
 [Python]::
-# Como Criar uma Janela Tkinter Centralizada Usando Classe em Python
+# Como Criar uma Janela Tkinter Centralizada em Python
 
 Quando desenvolvemos aplicações gráficas em **Python com Tkinter**, é comum
 precisarmos abrir a janela já **centralizada na tela**. Em muitos tutoriais,
