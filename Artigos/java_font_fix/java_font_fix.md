@@ -1,4 +1,4 @@
-[Dicas]::
+[Java]::
 # Como Corrigir Fontes Feias em Aplicativos Java no Linux
 
 Se você já precisou utilizar aplicativos Java, provavelmente já percebeu que,
