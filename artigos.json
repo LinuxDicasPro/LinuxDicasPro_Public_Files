@@ -1,17 +1,17 @@
 [
     {
-        "categories": "Python",
-        "title": "Como Criar uma Janela Tkinter Centralizada Usando Classe em Python",
-        "link": "https://raw.githubusercontent.com/LinuxDicasPro/LinuxDicasPro_Public_Files/refs/heads/master/Artigos/tkinter_class_centralizar/tkinter_class_centralizar.md",
-        "banner":"https://raw.githubusercontent.com/LinuxDicasPro/LinuxDicasPro_Public_Files/refs/heads/master/Artigos/tkinter_class_centralizar/banner.webp",
+        "categories": "Java",
+        "title": "Como Corrigir Fontes Feias em Aplicativos Java no Linux",
+        "link": "https://raw.githubusercontent.com/LinuxDicasPro/LinuxDicasPro_Public_Files/refs/heads/master/Artigos/1_java_font_fix/java_font_fix.md",
+        "banner":"https://raw.githubusercontent.com/LinuxDicasPro/LinuxDicasPro_Public_Files/refs/heads/master/Artigos/1_java_font_fix/banner.webp",
         "date": "outubro 05, 2025"
     }
 ,
     {
-        "categories": "Java",
-        "title": "Como Corrigir Fontes Feias em Aplicativos Java no Linux",
-        "link": "https://raw.githubusercontent.com/LinuxDicasPro/LinuxDicasPro_Public_Files/refs/heads/master/Artigos/java_font_fix/java_font_fix.md",
-        "banner":"https://raw.githubusercontent.com/LinuxDicasPro/LinuxDicasPro_Public_Files/refs/heads/master/Artigos/java_font_fix/banner.webp",
+        "categories": "Python",
+        "title": "Como Criar uma Janela Tkinter Centralizada em Python",
+        "link": "https://raw.githubusercontent.com/LinuxDicasPro/LinuxDicasPro_Public_Files/refs/heads/master/Artigos/2_tkinter_class_centralizar/tkinter_class_centralizar.md",
+        "banner":"https://raw.githubusercontent.com/LinuxDicasPro/LinuxDicasPro_Public_Files/refs/heads/master/Artigos/2_tkinter_class_centralizar/banner.webp",
         "date": "outubro 05, 2025"
     }
 ]
