@@ -1,10 +1,20 @@
 [
     {
+        "categories": "Rust",
+        "title": "Tratamento de Erros com Quebras de Linha de Comandos em Rust",
+        "link": "https://raw.githubusercontent.com/LinuxDicasPro/LinuxDicasPro_Public_Files/refs/heads/master/Artigos/3_rust_cli_error_handling/rust_cli_error_handling.md",
+        "banner":"https://raw.githubusercontent.com/LinuxDicasPro/LinuxDicasPro_Public_Files/refs/heads/master/Artigos/3_rust_cli_error_handling/banner.webp",
+        "date": "outubro 07, 2025",
+        "update": "outubro 07, 2025"
+    }
+,
+    {
         "categories": "Java",
         "title": "Como Corrigir Fontes Feias em Aplicativos Java no Linux",
         "link": "https://raw.githubusercontent.com/LinuxDicasPro/LinuxDicasPro_Public_Files/refs/heads/master/Artigos/1_java_font_fix/java_font_fix.md",
         "banner":"https://raw.githubusercontent.com/LinuxDicasPro/LinuxDicasPro_Public_Files/refs/heads/master/Artigos/1_java_font_fix/banner.webp",
-        "date": "outubro 05, 2025"
+        "date": "outubro 07, 2025",
+        "update": "outubro 07, 2025"
     }
 ,
     {
@@ -12,6 +22,7 @@
         "title": "Como Criar uma Janela Tkinter Centralizada em Python",
         "link": "https://raw.githubusercontent.com/LinuxDicasPro/LinuxDicasPro_Public_Files/refs/heads/master/Artigos/2_tkinter_class_centralizar/tkinter_class_centralizar.md",
         "banner":"https://raw.githubusercontent.com/LinuxDicasPro/LinuxDicasPro_Public_Files/refs/heads/master/Artigos/2_tkinter_class_centralizar/banner.webp",
-        "date": "outubro 05, 2025"
+        "date": "outubro 07, 2025",
+        "update": "outubro 07, 2025"
     }
 ]

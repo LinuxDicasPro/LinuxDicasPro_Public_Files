@@ -28,13 +28,17 @@ find "$DIR" -type f -name "*.md" | while read -r file; do
     categories="$(sed -n 's/^\[\(.*\)\]::.*/\1/p' $file)"
     date="$(date -d "$(stat -c %y $file)" +"%B %d, %Y")"
 
+    test ! -f "$dir/PUBLISH_DATE" && echo "$date" >  "$dir/PUBLISH_DATE"
+    publish="$(< "$dir/PUBLISH_DATE")"
+
     echo -e \
 "    {
         \"categories\": \"$categories\",
         \"title\": \"$title\",
         \"link\": \"$URL/$file\",
         \"banner\":\"$URL/$banner_path\",
-        \"date\": \"$date\"
+        \"date\": \"$publish\",
+        \"update\": \"$date\"
     }" >> "$OUTPUT"
 done
 
