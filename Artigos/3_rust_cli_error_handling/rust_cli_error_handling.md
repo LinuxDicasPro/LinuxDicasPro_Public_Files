@@ -1,5 +1,5 @@
 [Rust]::
-# Tratamento de Erros com Quebras de Linha de Comandos em Rust
+# Tratando Erros com Quebra de Linha de Comandos em Rust
 
 Em programas de linha de comando (CLI) em Rust, a forma como tratamos mensagens
 de erro influencia diretamente a legibilidade e a usabilidade do programa.

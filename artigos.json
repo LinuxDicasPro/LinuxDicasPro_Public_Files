@@ -1,7 +1,7 @@
 [
     {
         "categories": "Rust",
-        "title": "Tratamento de Erros com Quebras de Linha de Comandos em Rust",
+        "title": "Tratando Erros com Quebra de Linha de Comandos em Rust",
         "link": "https://raw.githubusercontent.com/LinuxDicasPro/LinuxDicasPro_Public_Files/refs/heads/master/Artigos/3_rust_cli_error_handling/rust_cli_error_handling.md",
         "banner":"https://raw.githubusercontent.com/LinuxDicasPro/LinuxDicasPro_Public_Files/refs/heads/master/Artigos/3_rust_cli_error_handling/banner.webp",
         "date": "outubro 07, 2025",
