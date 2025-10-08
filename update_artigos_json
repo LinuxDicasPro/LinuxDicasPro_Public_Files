@@ -37,8 +37,7 @@ find "$DIR" -type f -name "*.md" | while read -r file; do
         \"title\": \"$title\",
         \"link\": \"$URL/$file\",
         \"banner\":\"$URL/$banner_path\",
-        \"date\": \"$publish\",
-        \"update\": \"$date\"
+        \"date\": \"$publish\"
     }" >> "$OUTPUT"
 done
 
